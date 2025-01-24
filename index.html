@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faisal Ishak - Iccal10</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F5F5DC;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 1.2em;
+            color: #B8860B;
+        }
+        nav {
+            text-align: center;
+            margin-top: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #000;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .portfolio img {
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal img {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Faisal Ishak</h1>
+        <h2>Iccal10</h2>
+    </header>
+    <nav>
+        <a href="#about">Tentang</a>
+        <a href="#portfolio">Portofolio</a>
+        <a href="#contact">Kontak</a>
+    </nav>
+    <div class="container">
+        <section id="about">
+            <h2>Tentang Saya</h2>
+            <p>Saya adalah seorang desainer kreatif yang berfokus pada desain 2D dan 3D.</p>
+        </section>
+        <section id="portfolio">
+            <h2>Portofolio</h2>
+            <div class="portfolio">
+                <img src="IMG_2780.jpg" alt="Karya 1" onclick="openModal(this.src)">
+                <img src="IMG_2792.jpg" alt="Karya 2" onclick="openModal(this.src)">
+                <img src="IMG_2798.jpg" alt="Karya 3" onclick="openModal(this.src)">
+                <img src="IMG_2799.jpg" alt="Karya 4" onclick="openModal(this.src)">
+                <img src="IMG_2804.jpg" alt="Karya 5" onclick="openModal(this.src)">
+                <img src="X-S10027.jpg" alt="Karya 6" onclick="openModal(this.src)">
+
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Kontak</h2>
+            <p>Email: faisal10102000@gmail.com</p>
+            <p>Instagram: @iccal_10</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Faisal Ishak - Iccal10</p>
+    </footer>
+    
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modalImg">
+    </div>
+    
+    <script>
+        function openModal(src) {
+            document.getElementById("imageModal").style.display = "flex";
+            document.getElementById("modalImg").src = src;
+        }
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+</body>
+</html>
